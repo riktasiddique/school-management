@@ -18,27 +18,22 @@
             <li class="nav-item active">
               <a class="nav-link" href="/"> Home <span class="sr-only">(current)</span></a>
             </li>
-            {{-- <li class="nav-item ">
-              <a class="nav-link" href="about.html"> About </a>
-            </li> --}}
-
             <li class="nav-item ">
               <a class="nav-link" href="{{route('home.teacher')}}"> Teacher </a>
             </li>
-
-            {{-- <li class="nav-item">
-              <a class="nav-link" href="vehicle.html"> vehicle </a>
-            </li> --}}
-
             <li class="nav-item">
               <a class="nav-link" href="{{route('home.contact_us')}}">Contact Us</a>
             </li>
-
+            @auth
+              <li class="nav-item">
+                <a class="nav-link" href="{{ route('user.profile') }}">Profile</a>
+              </li>
+              @else
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{route('login')}}">Login</a>
+                  </li>
+            @endauth
           </ul>
-          <form class="form-inline my-2 my-lg-0 ml-0 ml-lg-4 mb-3 mb-lg-0">
-            <input type="text">
-            <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit"></button>
-          </form>
         </div>
       </nav>
     </div>

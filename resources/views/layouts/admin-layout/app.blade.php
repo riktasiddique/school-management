@@ -3,7 +3,7 @@
 
     <head>
         <meta charset="utf-8">
-        <title>Dashboard | Hyper - Responsive Bootstrap 5 Admin Dashboard</title>
+        <title>@yield('title') | {{config('app.name')}}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description">
         <meta content="Coderthemes" name="author">
@@ -47,7 +47,40 @@
                     <!-- Topbar Start -->
                     @include('layouts.navber.dashboard.top-navber')
                     <!-- end Topbar -->
-                    
+                    {{-- Success massage --}}
+                    @if ($message = Session::get('success'))
+                        <div class="row justify-content-center">
+                            <div class="col-md-5">
+                                <div class="alert alert-success alert-block">
+                                    <h5 class="text-center"><strong>{{ $message }}</strong></h5>
+                                </div>
+                            </div>
+                        </div>
+                    @endif
+                     {{-- Error massage --}}
+                    @if ($message = Session::get('error'))
+                     <div class="row justify-content-center">
+                         <div class="col-md-5">
+                             <div class="alert alert-danger alert-block">
+                                 <h5 class="text-center"><strong>{{ $message }}</strong></h5>
+                             </div>
+                         </div>
+                     </div>
+                    @endif
+                    {{-- Any error --}}
+                    @if ($errors->any())
+                        <div class="row justify-content-center">
+                            <div class="col-md-5">
+                                <div class="alert alert-danger">
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    @endif
                     <!-- Start Content-->
                     <div class="container-fluid">
                         @yield('content')

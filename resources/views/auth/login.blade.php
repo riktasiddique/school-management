@@ -99,7 +99,7 @@
                                     <label><input type="checkbox" class="i-checks"> Remember me </label>
                                 </div> --}}
                                 <button type="submit" class="btn btn-success btn-block loginbtn">Login</button>
-                                <a class="btn btn-default btn-block" href="#">Register</a>
+                                <a class="btn btn-default btn-block" href="{{route('register')}}">Register</a>
                             </form>
                         </div>
                     </div>

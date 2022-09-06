@@ -1,59 +1,175 @@
-<x-guest-layout>
-    <x-auth-card>
-        <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
-        </x-slot>
+<!doctype html>
+<html class="no-js" lang="en">
 
-        <!-- Validation Errors -->
-        <x-auth-validation-errors class="mb-4" :errors="$errors" />
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Register | Nalika - Material Admin Template</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {{-- Bootstrap 5 cdn --}}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- favicon
+		============================================ -->
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <!-- Google Fonts
+		============================================ -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900" rel="stylesheet">
+    <!-- Bootstrap CSS
+		============================================ -->
+    <link rel="stylesheet" href="{{asset('dashboard/css/bootstrap.min.css')}}">
+    <!-- Bootstrap CSS
+		============================================ -->
+    <link rel="stylesheet" href="{{asset('dashboard/css/font-awesome.min.css')}}">
+    <!-- owl.carousel CSS
+		============================================ -->
+    <link rel="stylesheet" href="{{asset('dashboard/css/owl.carousel.css')}}">
+    <link rel="stylesheet" href="{{asset('dashboard/css/owl.theme.css')}}">
+    <link rel="stylesheet" href="{{asset('dashboard/css/owl.transitions.css')}}">
+    <!-- animate CSS
+		============================================ -->
+    <link rel="stylesheet" href="{{asset('dashboard/css/animate.css')}}">
+    <!-- normalize CSS
+		============================================ -->
+    <link rel="stylesheet" href="{{asset('dashboard/css/normalize.css')}}">
+    <!-- main CSS
+		============================================ -->
+    <link rel="stylesheet" href="{{asset('dashboard/css/main.css')}}">
+    <!-- morrisjs CSS
+		============================================ -->
+    <link rel="stylesheet" href="{{asset('dashboard/css/morrisjs/morris.css')}}">
+    <!-- mCustomScrollbar CSS
+		============================================ -->
+    <link rel="stylesheet" href="{{asset('dashboard/css/scrollbar/jquery.mCustomScrollbar.min.css')}}">
+    <!-- metisMenu CSS
+		============================================ -->
+    <link rel="stylesheet" href="{{asset('dashboard/css/metisMenu/metisMenu.min.css')}}">
+    <link rel="stylesheet" href="{{asset('dashboard/css/metisMenu/metisMenu-vertical.css')}}">
+    <!-- calendar CSS
+		============================================ -->
+    <link rel="stylesheet" href="{{asset('dashboard/css/calendar/fullcalendar.min.css')}}">
+    <link rel="stylesheet" href="{{asset('dashboard/css/calendar/fullcalendar.print.min.css')}}">
+    <!-- forms CSS
+		============================================ -->
+    <link rel="stylesheet" href="{{asset('dashboard/css/form/all-type-forms.css')}}">
+    <!-- style CSS
+		============================================ -->
+    <link rel="stylesheet" href="{{asset('dashboard/css/style.css')}}">
+    <!-- responsive CSS
+		============================================ -->
+    <link rel="stylesheet" href="{{asset('dashboard/css/responsive.css')}}">
+    <!-- modernizr JS
+		============================================ -->
+    <script src="{{asset('dashboard/js/vendor/modernizr-2.8.3.min.js')}}"></script>
+</head>
 
-        <form method="POST" action="{{ route('register') }}">
-            @csrf
-
-            <!-- Name -->
-            <div>
-                <x-label for="name" :value="__('Name')" />
-
-                <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
+<body>
+   <div class="row">
+        <div class="color-line"></div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="back-link back-backend">
+                        
+                    </div>
+                </div>
             </div>
-
-            <!-- Email Address -->
-            <div class="mt-4">
-                <x-label for="email" :value="__('Email')" />
-
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
+        </div>
+        <div class="container-fluid">
+            <div class="row mt-5">
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"></div>
+                <div class="col-md-4 col-md-4 col-sm-4 col-xs-12">
+                    <div class="text-center m-b-md custom-login">
+                    </div>
+                    <div class="hpanel">
+                        <div class="panel-body">
+                            <form method="POST" action="{{ route('register') }}">
+                                @csrf
+                                <div class="form-group">
+                                    <label class="control-label" for="username">Username</label>
+                                    <input type="text" placeholder="Enter name" title="Please enter you username" required="" value="{{old('name')}}" name="name" id="username" class="form-control">
+                                    <span class="help-block small">Your username to app</span>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label" for="username">Email</label>
+                                    <input type="text" placeholder="Enter email" title="Please enter you username" required="" value="{{old('email')}}" name="email" id="username" class="form-control">
+                                    <span class="help-block small">Your email to app</span>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label" for="password">Password</label>
+                                    <input type="password" title="Please enter your password" placeholder="******" required="" value="" name="password" id="password" class="form-control">
+                                    <span class="help-block small">Yur strong password</span>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label" for="password">Password</label>
+                                    <input type="password" title="Please enter your password" placeholder="******" required="" value="" name="password_confirmation" id="password" class="form-control">
+                                    <span class="help-block small">Re strong password</span>
+                                </div>
+                                {{-- <div class="checkbox login-checkbox p-2">
+                                    <label><input type="checkbox" class="i-checks"> Remember me </label>
+                                </div> --}}
+                                <button type="submit" class="btn btn-success btn-block loginbtn">Submit</button>
+                                {{-- <a class="btn btn-default btn-block" href="{{route('register')}}">Register</a> --}}
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"></div>
             </div>
-
-            <!-- Password -->
-            <div class="mt-4">
-                <x-label for="password" :value="__('Password')" />
-
-                <x-input id="password" class="block mt-1 w-full"
-                                type="password"
-                                name="password"
-                                required autocomplete="new-password" />
+            <div class="row">
+                <div class="col-md-12 col-md-12 col-sm-12 col-xs-12 text-center">
+                    <br>
+                    <p>Copyright © 2022 All rights reserved.</p>
+                </div>
             </div>
+        </div>
+   </div>
 
-            <!-- Confirm Password -->
-            <div class="mt-4">
-                <x-label for="password_confirmation" :value="__('Confirm Password')" />
+    <!-- jquery
+		============================================ -->
+    <script src="{{asset('dashboard/js/vendor/jquery-1.11.3.min.js')}}"></script>
+    <!-- bootstrap JS
+		============================================ -->
+    <script src="{{asset('dashboard/js/bootstrap.min.js')}}"></script>
+    <!-- wow JS
+		============================================ -->
+    <script src="{{asset('dashboard/js/wow.min.js')}}"></script>
+    <!-- price-slider JS
+		============================================ -->
+    <script src="{{asset('dashboard/js/jquery-price-slider.js')}}"></script>
+    <!-- meanmenu JS
+		============================================ -->
+    <script src="{{asset('dashboard/js/jquery.meanmenu.js')}}"></script>
+    <!-- owl.carousel JS
+		============================================ -->
+    <script src="{{asset('dashboard/js/owl.carousel.min.js')}}"></script>
+    <!-- sticky JS
+		============================================ -->
+    <script src="{{asset('dashboard/js/jquery.sticky.js')}}"></script>
+    <!-- scrollUp JS
+		============================================ -->
+    <script src="{{asset('dashboard/js/jquery.scrollUp.min.js')}}"></script>
+    <!-- mCustomScrollbar JS
+		============================================ -->
+    <script src="{{asset('dashboard/js/scrollbar/jquery.mCustomScrollbar.concat.min.js')}}"></script>
+    <script src="js/scrollbar/mCustomScrollbar-active.js"></script>
+    <!-- metisMenu JS
+		============================================ -->
+    <script src="{{asset('dashboard/js/metisMenu/metisMenu.min.js')}}"></script>
+    <script src="{{asset('dashboard/js/metisMenu/metisMenu-active.js')}}"></script>
+    <!-- tab JS
+		============================================ -->
+    <script src="{{asset('dashboard/js/tab.js')}}"></script>
+    <!-- icheck JS
+		============================================ -->
+    <script src="{{asset('dashboard/js/icheck/icheck.min.js')}}"></script>
+    <script src="{{asset('dashboard/js/icheck/icheck-active.js')}}"></script>
+    <!-- plugins JS
+		============================================ -->
+    <script src="{{asset('dashboard/js/plugins.js')}}"></script>
+    <!-- main JS
+		============================================ -->
+    <script src="{{asset('dashboard/js/main.js')}}"></script>
+</body>
 
-                <x-input id="password_confirmation" class="block mt-1 w-full"
-                                type="password"
-                                name="password_confirmation" required />
-            </div>
-
-            <div class="flex items-center justify-end mt-4">
-                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
-                    {{ __('Already registered?') }}
-                </a>
-
-                <x-button class="ml-4">
-                    {{ __('Register') }}
-                </x-button>
-            </div>
-        </form>
-    </x-auth-card>
-</x-guest-layout>
+</html>

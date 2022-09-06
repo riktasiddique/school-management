@@ -11,11 +11,7 @@
   <meta name="keywords" content="" />
   <meta name="description" content="" />
   <meta name="author" content="" />
-
-  <title>Adward</title>
-
-
-
+  <title>@yield('title') | {{config('app.name')}}</title>
   <!-- bootstrap core css -->
   <link rel="stylesheet" type="text/css" href="{{asset('front-end/css/bootstrap.css')}}" />
   <!-- progress barstle -->
@@ -28,13 +24,7 @@
   <link href="{{asset('front-end/css/style.css')}}" rel="stylesheet" />
   <!-- responsive style -->
   <link href="{{asset('front-end/css/responsive.css')}}" rel="stylesheet" />
-
-
-
-
   <link rel="stylesheet" href="{{asset('front-end/css/css-circular-prog-bar.css')}}">
-
-
 </head>
 
 <body>
